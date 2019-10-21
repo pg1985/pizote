@@ -39,11 +39,16 @@ bot.command :roll do|event, roll|
   "You rolled: `#{rolls}`, total: `#{sum}`"
 end
 
+bot.command :pick do |event, *options|
+	options.sample
+end
+
 bot.command :help do|event|
 	'''commands:
 	!rfs   = Roll for shoes roll.  performs a 2d6 roll for you and the DM.  Whoever has the higher number wins.
 	!d20   = Rolls 1d20 automatically.  
 	!roll <number>d<sides> = rolls the <number> of dice with <sides> of sides once.  Example `!roll 2d10`
+	!pick  = Pick one from a group of options, such as `!pick a b c d e`
 	'''
 end
 
